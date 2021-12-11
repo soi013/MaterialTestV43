@@ -1,0 +1,163 @@
+﻿<Window
+    x:Class="MaterialTestV43.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MaterialTestV43"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="1050"
+    Style="{StaticResource MaterialDesignWindow}"
+    mc:Ignorable="d">
+    <ScrollViewer>
+        <StackPanel HorizontalAlignment="Center">
+            <UniformGrid Margin="10" Columns="3">
+                <Button
+                    Margin="5"
+                    Content="PrimaryLight"
+                    Cursor="Hand"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}" />
+                <Button
+                    Margin="5"
+                    Content="PrimaryMid"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+                <Button
+                    Margin="5"
+                    Content="PrimaryDark"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}" />
+                <Button
+                    Margin="5"
+                    Content="SecondaryLight"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}" />
+                <Button
+                    Margin="5"
+                    Content="SecondaryMid"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryButton}" />
+                <Button
+                    Margin="5"
+                    Content="SecondaryDark"
+                    Cursor="Hand"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" />
+            </UniformGrid>
+
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style
+                        x:Shared="False"
+                        BasedOn="{StaticResource MaterialDesignCardGroupBox}"
+                        TargetType="GroupBox">
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Content="checked" IsChecked="True" />
+                                    <Button Content="Flat Primary Button" Style="{StaticResource MaterialDesignFlatButton}" />
+                                    <Button Content="Flat Secondary Button" Style="{StaticResource MaterialDesignFlatAccentButton}" />
+                                    <Button Content="Primary Button" Style="{StaticResource MaterialDesignRaisedButton}" />
+                                    <Button Content="Secondary Button" Style="{StaticResource MaterialDesignRaisedSecondaryButton}" />
+                                </StackPanel>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </StackPanel.Resources>
+
+                <GroupBox Header="Light - Adjustment Yellow/Teal">
+                    <FrameworkElement.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <materialDesign:BundledTheme
+                                    BaseTheme="Light"
+                                    ColorAdjustment="{materialDesign:ColorAdjustment}"
+                                    PrimaryColor="Yellow"
+                                    SecondaryColor="Teal" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </FrameworkElement.Resources>
+                </GroupBox>
+
+                <GroupBox Header="Light - NoAdjustment Yellow/Teal">
+                    <FrameworkElement.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <materialDesign:BundledTheme
+                                    BaseTheme="Light"
+                                    PrimaryColor="Yellow"
+                                    SecondaryColor="Teal" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </FrameworkElement.Resources>
+                </GroupBox>
+
+                <GroupBox Header="Dark - Adjustment Indigo/Red">
+                    <FrameworkElement.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <materialDesign:BundledTheme
+                                    BaseTheme="Dark"
+                                    ColorAdjustment="{materialDesign:ColorAdjustment}"
+                                    PrimaryColor="Indigo"
+                                    SecondaryColor="Red" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </FrameworkElement.Resources>
+                </GroupBox>
+
+                <GroupBox Header="Dark - NoAdjustment Indigo/Red">
+                    <FrameworkElement.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <materialDesign:BundledTheme
+                                    BaseTheme="Dark"
+                                    PrimaryColor="Indigo"
+                                    SecondaryColor="Red" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </FrameworkElement.Resources>
+                </GroupBox>
+            </StackPanel>
+
+            <TextBox
+                Width="400"
+                Margin="10"
+                MaxLength="50"
+                Text="寿限無、寿限無、五劫の擦り切れ、海砂利水魚の、水行末・雲来末・風来末、喰う寝る処に住む処、藪ら柑"
+                TextWrapping="Wrap" />
+
+            <StackPanel Orientation="Horizontal">
+                <ComboBox
+                    Width="200"
+                    Margin="120"
+                    materialDesign:HintAssist.Hint="Citreae"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                    <ComboBoxItem Content="Lemon" />
+                    <ComboBoxItem Content="Orange" />
+                    <ComboBoxItem Content="Grapefruit" />
+                </ComboBox>
+
+                <ComboBox
+                    Width="200"
+                    Margin="120"
+                    materialDesign:HintAssist.Hint="Citreae"
+                    Style="{StaticResource MaterialDesignFilledComboBox}">
+                    <ComboBoxItem Content="Lemon" />
+                    <ComboBoxItem Content="Orange" />
+                    <ComboBoxItem Content="Grapefruit" />
+                </ComboBox>
+            </StackPanel>
+
+            <TextBox
+                Width="150"
+                Margin="10"
+                materialDesign:TextFieldAssist.HasLeadingIcon="True"
+                materialDesign:TextFieldAssist.HasTrailingIcon="True"
+                materialDesign:TextFieldAssist.LeadingIcon="Triangle"
+                materialDesign:TextFieldAssist.LeadingIconSize="8"
+                materialDesign:TextFieldAssist.TrailingIcon="Yen"
+                materialDesign:TextFieldAssist.TrailingIconSize="24"
+                Text="1,000,000"
+                TextWrapping="Wrap" />
+        </StackPanel>
+    </ScrollViewer>
+</Window>
